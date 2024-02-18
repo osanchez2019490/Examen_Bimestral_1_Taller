@@ -6,7 +6,8 @@ class Server {
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-
+        this.usuarioRegister = '/api/usuarioRegister';
+        this.administradorRegister = '/api/administradorRegister';
 
         this.conectarDB();
         this.middlware();
@@ -24,7 +25,8 @@ class Server {
     }
 
     routes(){
-
+        this.app.use(this.usuarioRegister, require('../routers/usuarioRegister.routes'));
+        this.app.use(this.administradorRegister, require('../routers/administradorRegister.routes'));
     }
 
     listen(){

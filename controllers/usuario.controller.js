@@ -6,12 +6,12 @@ const jwt = require('jsonwebtoken');
 const usuarioPost = async (req, res) =>{
     const {role, password,...resto} = req.body;
 
-    const usuario = new Usuario ({role, password, resto});
+    const usuario = new Usuario ({role, password, ...resto});
 
-    estudiante.role = 'USUARIO_ROLE';
+    usuario.role = 'USUARIO_ROLE';
 
     const salt = bcrypt.genSaltSync();
-    estudiante.password = bcrypt.hashSync(password, salt);
+    usuario.password = bcrypt.hashSync(password, salt);
 
     await usuario.save();
     res.status(200).json({
