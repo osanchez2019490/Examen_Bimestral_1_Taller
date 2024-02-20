@@ -19,6 +19,7 @@ router.post(
         check("correo").custom(existeEmeail),
         check("password", "Se necestia una contraseña").not().isEmpty(),
         check("password", "Deber ser mayor a 6 caracteres").isLength({min: 6}),
+        check("role", "Se necestia un role").not().isEmpty(),
         validarCampos
     ], administradorPost)
 
