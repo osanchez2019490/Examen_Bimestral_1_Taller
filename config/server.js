@@ -1,7 +1,12 @@
+'use strict'
 
-const express = require('express');
-const cors = require('cors');
-const { dbConnection } = require('./config')
+
+import express from 'express';
+import cors from'cors';
+import { dbConnection } from './config.js';
+import userRoutes from '../src/users/usuarioRegister.routes.js';
+import authRoutes from '../src/auth/auth.routes.js';
+import adminRoutes from '../src/admin/administradorRegister.routes.js';
 
 class Server {
     constructor(){
@@ -10,6 +15,7 @@ class Server {
         this.usuarioRegister = '/api/usuarioRegister';
         this.administradorRegister = '/api/administradorRegister';
         this.login = '/api/auth'
+
         this.conectarDB();
         this.middlware();
         this.routes();
@@ -26,9 +32,9 @@ class Server {
     }
 
     routes(){
-        this.app.use(this.usuarioRegister, require('../routers/usuarioRegister.routes'));
-        this.app.use(this.administradorRegister, require('../routers/administradorRegister.routes'));
-        this.app.use(this.login, require('../routers/auth.routes'));
+        this.app.use(this.usuarioRegister, userRoutes );
+        this.app.use(this.administradorRegister, adminRoutes);
+        this.app.use(this.login, authRoutes);
     }
 
     listen(){
@@ -37,5 +43,4 @@ class Server {
         });
     };
 }
-
-module.exports = Server;
+export default  Server;
