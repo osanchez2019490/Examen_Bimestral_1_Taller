@@ -1,6 +1,6 @@
-const  {Schema, model} = require('mongoose');
+import  mongoose from 'mongoose';
 
-const UsuarioSchema = Schema({
+const UsuarioSchema = mongoose.Schema({
     username: {
         type: String,
         require: [true, 'Su username es requerido'],
@@ -41,4 +41,4 @@ const UsuarioSchema = Schema({
 
 });
 
-module.exports = model ('Usuario', UsuarioSchema);
+export default mongoose.model('Usuario', UsuarioSchema);

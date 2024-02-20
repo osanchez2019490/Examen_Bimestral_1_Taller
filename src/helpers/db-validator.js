@@ -1,7 +1,7 @@
-const Usuario = require('../models/usuario');
-const Administrador = require('../models/administrador')
+import Usuario from '../users/usuario.js';
+import Administrador from '../admin/administrador.js';
 
-const existeEmeail = async(correo= '') =>{
+export const existeEmeail = async(correo= '') =>{
     const existeEmeail = await Usuario.findOne({correo});
     const existeEmeailAdmin = await Administrador.findOne({correo});
     if (existeEmeail ||  existeEmeailAdmin  ) {
@@ -9,7 +9,7 @@ const existeEmeail = async(correo= '') =>{
     };
 };
 
-const existeUsername = async (username = '') =>{ 
+export const existeUsername = async (username = '') =>{ 
     const existeUsername = await Usuario.findOne({username});
     const existeUsernameAdmin = await Administrador.findOne({username});
     if(existeUsername ||  existeUsernameAdmin) {
@@ -17,7 +17,3 @@ const existeUsername = async (username = '') =>{
     };
 };
 
-module.exports ={
-    existeEmeail,
-    existeUsername
-}

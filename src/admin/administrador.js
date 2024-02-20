@@ -1,6 +1,6 @@
-const { Schema, model} = require('mongoose');
+import mongoose  from "mongoose";
 
-const AdministradorSchema = Schema({
+const AdministradorSchema = mongoose.Schema({
     username: {
         type: String,
         require: [true, 'Se necesita un username a la cuenta'],
@@ -35,4 +35,4 @@ const AdministradorSchema = Schema({
     }
 });
 
-module.exports = model('Administrador', AdministradorSchema);
+export default mongoose.model('Administrador', AdministradorSchema);

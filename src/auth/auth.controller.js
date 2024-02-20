@@ -1,10 +1,10 @@
-const { request, response } = require('express');
-const bycript = require('bcrypt');
-const Usuario = require('../models/usuario');
-const Administrador = require('../models/administrador');
-const { generarJWT } = require('../helpers/generar-jwt');
+import { request, response } from 'express';
+import bycript from 'bcrypt';
+import Usuario from '../users/usuario.js';
+import Administrador from '../admin/administrador.js';
+import { generarJWT } from '../helpers/generar-jwt.js';
 
-const login = async(req = request, res = response) =>{
+export const login = async(req = request, res = response) =>{
     const {username, password} = req.body;
 
     try {
@@ -47,8 +47,4 @@ const login = async(req = request, res = response) =>{
         })
         
     }
-}
-
-module.exports = {
-    login
 }

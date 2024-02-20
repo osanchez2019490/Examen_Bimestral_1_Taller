@@ -1,6 +1,6 @@
-const { validationResult } = require('express-validator');
+export { validationResult } from 'express-validator';
 
-const validarCampos = (req, res, next) => {
+export const validarCampos = (req, res, next) => {
     const error = validationResult(req);
     if(!error.isEmpty()){
         return res.status(400).json(error);
@@ -9,6 +9,3 @@ const validarCampos = (req, res, next) => {
     next();
 }
 
-module.exports = {
-    validarCampos
-}

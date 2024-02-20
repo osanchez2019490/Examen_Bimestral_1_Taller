@@ -1,9 +1,9 @@
-const Administrador = require('../models/administrador');
-const {response} = require('express');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+import  Administrador from '../admin/administrador.js';
+import { response, request } from "express";
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
-const administradorPost = async (req, res) => {
+export const administradorPost = async (req, res) => {
     const { password, ...resto} = req.body;
 
     const administrador = new Administrador ({password, ...resto});
@@ -18,6 +18,3 @@ const administradorPost = async (req, res) => {
     
 }
 
-module.exports = {
-    administradorPost
-}

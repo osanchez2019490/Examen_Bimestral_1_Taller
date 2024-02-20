@@ -1,9 +1,9 @@
-const Usuario = require('../models/usuario');
-const {response} = require('express');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+import Usuario from '../users/usuario.js';
+import {response} from 'express';
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken';
 
-const usuarioPost = async (req, res) =>{
+export const usuarioPost = async (req, res) =>{
     const {role, password,...resto} = req.body;
 
     const usuario = new Usuario ({role, password, ...resto});
@@ -19,6 +19,3 @@ const usuarioPost = async (req, res) =>{
     });
 }
 
-module.exports ={
-    usuarioPost
-}
