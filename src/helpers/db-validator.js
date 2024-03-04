@@ -1,5 +1,6 @@
 import Usuario from '../users/usuario.js';
 import Administrador from '../admin/administrador.js';
+import Role from '../roles/role.js';
 
 export const existeEmeail = async(correo= '') =>{
     const existeEmeail = await Usuario.findOne({correo});
@@ -17,3 +18,9 @@ export const existeUsername = async (username = '') =>{
     };
 };
 
+export const existeRole = async (role = '') => {
+    const existeRole = await Role.findOne({role});
+    if(!existeRole) {
+        throw new Error (`El rol ${role} no existe en la base de datos`);
+    }
+}
