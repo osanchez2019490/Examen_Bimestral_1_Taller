@@ -41,5 +41,17 @@ export const categoriaGetById = async(req, res) => {
 }
 
 export const categoriaPut = async (req, res) =>{
+    const { id } = req.params;
+    const {_id, estado, ...resto} = req.body;
 
+
+    const categoriaAnterior = await Categoria.findById(id);
+
+    const categoriaActualizada = await Categoria.findByIdAndUpdate(id, resto);
+
+    res.status(200).json({
+        msg: 'La actualizacion fue correcta!',
+        categoriaActualizada,
+        categoriaAnterior
+    })
 }

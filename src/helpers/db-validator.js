@@ -33,12 +33,30 @@ export const existeCategoria = async (categoria = '') =>{
     };
 };
 
+export const existeUsuarioById = async (id = '') => {
+        const existeUsuario = await Usuario.findById(id);
 
-export const existeModelosById = async (id = '') =>{ 
-    const existeIdUsuario = await Usuario.findOne({id});
-    const existeIdUsuarioAdmin = await Administrador.findOne({id});
-    const existeIdCategoria = await Categoria.findOne({id});
-    if(!existeIdUsuario ||  !existeIdUsuarioAdmin || !existeIdCategoria)  {
-        throw new Error (`El id ${ id }  no existe en la base de datos`);
-    };
+        if (!existeUsuario) {
+            throw new Error(`El id ${id} no existe en la base de datos`);
+        }
+    
 };
+
+export const existeAdministradorById = async (id = '') => {
+    const existeUsuario = await Administrador.findById(id);
+
+    if (!existeUsuario) {
+        throw new Error(`El id ${id} no existe en la base de datos`);
+    }
+
+};
+
+export const existeCategoriaById = async (id = '') => {
+    const existeUsuario = await Categoria.findById(id);
+
+    if (!existeUsuario) {
+        throw new Error(`El id ${id} no existe en la base de datos`);
+    }
+
+};
+

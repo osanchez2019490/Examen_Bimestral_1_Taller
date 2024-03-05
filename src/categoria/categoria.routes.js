@@ -3,8 +3,8 @@ import { check } from "express-validator";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar.jwt.js";
 import { tieneRol } from "../middlewares/validar.rol.js";
-import { categoriaGet, categoriaGetById, categoriaPost } from "./categoria.controller.js";
-import { existeCategoria } from "../helpers/db-validator.js";
+import { categoriaGet, categoriaGetById, categoriaPost, categoriaPut } from "./categoria.controller.js";
+import { existeCategoria, existeCategoriaById } from "../helpers/db-validator.js";
 
 const router = Router();
 
@@ -22,5 +22,7 @@ router.post(
 
 router.get("/", [validarJWT,tieneRol("ADMINISTRADOR_ROLE")], categoriaGet)
 
-router.get("/:id", [validarJWT,tieneRol("ADMINISTRADOR_ROLE")], categoriaGetById)
+router.get("/:id", [validarJWT,tieneRol("ADMINISTRADOR_ROLE"), check("id", "NO es una id valida").isMongoId(),check("id").custom(existeCategoriaById)], categoriaGetById)
+
+router.put("/:id", [validarJWT, tieneRol("ADMINISTRADOR_ROLE"),check("id", "NO es una id valida").isMongoId(),check("id").custom(existeCategoriaById), validarCampos], categoriaPut)
 export default router;
