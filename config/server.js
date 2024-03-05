@@ -7,14 +7,16 @@ import { dbConnection } from './config.js';
 import userRoutes from '../src/users/usuarioRegister.routes.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import adminRoutes from '../src/admin/administradorRegister.routes.js';
+import categoriaRoutes from '../src/categoria/categoria.routes.js';
 
 class Server {
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-        this.usuarioRegister = '/api/usuarioRegister';
-        this.administradorRegister = '/api/administradorRegister';
-        this.login = '/api/auth'
+        this.usuarioRegisterPath = '/MercadoEnLinea/v1/usuarioRegister';
+        this.administradorRegisterPath = '/MercadoEnLinea/v1/administradorRegister';
+        this.loginPath = '/MercadoEnLinea/v1/auth';
+        this.categoriaPath =  '/MercadoEnLinea/v1/categoria'
 
         this.conectarDB();
         this.middlware();
@@ -32,9 +34,10 @@ class Server {
     }
 
     routes(){
-        this.app.use(this.usuarioRegister, userRoutes );
-        this.app.use(this.administradorRegister, adminRoutes);
-        this.app.use(this.login, authRoutes);
+        this.app.use(this.usuarioRegisterPath, userRoutes );
+        this.app.use(this.administradorRegisterPath, adminRoutes);
+        this.app.use(this.loginPath, authRoutes);
+        this.app.use(this.categoriaPath, categoriaRoutes);
     }
 
     listen(){

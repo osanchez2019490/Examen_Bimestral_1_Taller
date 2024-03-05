@@ -1,5 +1,20 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { validarCampos } from "../middlewares/validar-campos";
+import { validarCampos } from "../middlewares/validar-campos.js";
+import { validarJWT } from "../middlewares/validar.jwt.js";
+import { tieneRol } from "../middlewares/validar.rol.js";
+import { categoriaPost } from "./categoria.controller.js";
 
-import { categoriaPost } from "./categoria.controller";
+const router = Router();
+
+router.post(
+    "/",
+    [
+        validarJWT,
+        tieneRol("ADMINISTRADOR_ROLE"),
+        check("categoria", "La categoria es necesaria").not().isEmpty(),
+        check("descripcion", "La descripcion es necesaria"),
+        validarCampos
+    ], categoriaPost)
+
+export default router;
