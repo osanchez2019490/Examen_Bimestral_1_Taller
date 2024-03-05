@@ -30,3 +30,16 @@ export const categoriaGet = async(req = request, res = response) => {
         categorias
     })
 }
+
+export const categoriaGetById = async(req, res) => {
+    const { id } = req.params;
+    const categoria = await Categoria.findOne({ _id: id});
+
+    res.status(200).json({
+        categoria
+    })
+}
+
+export const categoriaPut = async (req, res) =>{
+
+}
