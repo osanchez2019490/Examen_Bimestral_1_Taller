@@ -1,0 +1,127 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Categoria",
+    "dateExported": "2024-03-05T23:05:15.275Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b838a5f9-0569-4c2a-bd2a-f67938bb0374",
+            "colId": "baa25071-3e11-44ef-99d7-03a1dc94897e",
+            "containerId": "",
+            "name": "post_Categoria",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/categoria",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-05T19:52:40.224Z",
+            "modified": "2024-03-05T20:08:28.238Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NzdiZTUxZWI2Njk5NTk5YTVjYWYiLCJpYXQiOjE3MDk2NjkyNjgsImV4cCI6MTcwOTY3NjQ2OH0.FeT6cB4m_BKlCcaGrlMTURXrMhmO6sHOHqPG9U9pHWQ"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"categoria\":\"Deporte\",\n  \"descripcion\": \"Una cosa para hacer deporte\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "711bde9a-84dd-4ddd-8909-f3f77db286b0",
+            "colId": "baa25071-3e11-44ef-99d7-03a1dc94897e",
+            "containerId": "",
+            "name": "get_Categoria",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/categoria",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-05T20:16:10.434Z",
+            "modified": "2024-03-05T21:54:06.727Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NzdiZTUxZWI2Njk5NTk5YTVjYWYiLCJpYXQiOjE3MDk2NjkyNjgsImV4cCI6MTcwOTY3NjQ2OH0.FeT6cB4m_BKlCcaGrlMTURXrMhmO6sHOHqPG9U9pHWQ"
+                }
+            ],
+            "params": [
+                {
+                    "name": "desde",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "limite",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "1cc2777c-893b-4300-b606-381c549e2d87",
+            "colId": "baa25071-3e11-44ef-99d7-03a1dc94897e",
+            "containerId": "",
+            "name": "getById_Categoria",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/categoria/65e77bc425062cd45d1d5506",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-05T20:34:19.615Z",
+            "modified": "2024-03-05T20:34:48.979Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NzdiZTUxZWI2Njk5NTk5YTVjYWYiLCJpYXQiOjE3MDk2NjkyNjgsImV4cCI6MTcwOTY3NjQ2OH0.FeT6cB4m_BKlCcaGrlMTURXrMhmO6sHOHqPG9U9pHWQ"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "40b8bc3f-849e-4227-90b6-e74b96712154",
+            "colId": "baa25071-3e11-44ef-99d7-03a1dc94897e",
+            "containerId": "",
+            "name": "put_Categoria",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/categoria/65e77bc425062cd45d1d5506",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-05T20:50:04.274Z",
+            "modified": "2024-03-05T22:19:30.911Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NzdiZTUxZWI2Njk5NTk5YTVjYWYiLCJpYXQiOjE3MDk2NzcxNjMsImV4cCI6MTcwOTY4NDM2M30.qFF8LqHFEh4b5TN6h2odVuRkXXe_1ixuVRqnAM48TmY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"categoria\": \"Deportes\",\n  \"descripcion\": \"Nose\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7ac8196c-c98f-443b-b007-eab6b405fabc",
+            "colId": "baa25071-3e11-44ef-99d7-03a1dc94897e",
+            "containerId": "",
+            "name": "delete_Categoria",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/categoria/65e77bc425062cd45d1d5506",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-03-05T22:43:23.941Z",
+            "modified": "2024-03-05T22:44:19.502Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NzdiZTUxZWI2Njk5NTk5YTVjYWYiLCJpYXQiOjE3MDk2NzcxNjMsImV4cCI6MTcwOTY4NDM2M30.qFF8LqHFEh4b5TN6h2odVuRkXXe_1ixuVRqnAM48TmY"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
