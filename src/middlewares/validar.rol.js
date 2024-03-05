@@ -2,7 +2,7 @@ export const tieneRol = (...roles) => {
     return (req, res, next) => {
         if(!req.usuario) {
             return res.status(500).json({
-                msg: 'Se requiere verificar un rol sin validar el token primero'
+                msg: 'Se quiere verificar un rol sin validar el token primero'
             })
         }
 

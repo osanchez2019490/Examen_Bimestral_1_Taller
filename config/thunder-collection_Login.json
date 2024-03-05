@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Login",
-    "dateExported": "2024-03-04T23:01:24.290Z",
+    "dateExported": "2024-03-05T19:52:02.334Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -10,11 +10,11 @@
             "colId": "11ee5170-1af4-480f-ac0a-64b762981ed7",
             "containerId": "",
             "name": "post_Login",
-            "url": "http://localhost:3000/api/auth/login",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/auth/login",
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-04T22:55:45.074Z",
-            "modified": "2024-03-04T23:01:08.100Z",
+            "modified": "2024-03-05T19:51:41.358Z",
             "headers": [],
             "params": [],
             "body": {
@@ -22,6 +22,7 @@
                 "raw": "{\n  \"username\": \"XDD\",\n  \"password\": \"123456\"\n}",
                 "form": []
             },
+            "reqType": "post",
             "tests": []
         }
     ]

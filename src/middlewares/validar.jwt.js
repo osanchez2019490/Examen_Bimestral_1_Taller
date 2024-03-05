@@ -24,7 +24,14 @@ export const validarJWT = async(req, res, next) => {
             })
         }
 
-        const usuarioToken = usuario || administrador;
+    
+        let usuarioToken;
+        if (usuario) {
+            usuarioToken = usuario;
+        } else {
+            usuarioToken = administrador;
+        }
+
 
         if(!usuarioToken.estado){
             return res.status(401).json({
@@ -32,7 +39,7 @@ export const validarJWT = async(req, res, next) => {
             })
         }
 
-        req.usuarioToken = usuarioToken;
+        req.usuario= usuarioToken;
 
         next();
 

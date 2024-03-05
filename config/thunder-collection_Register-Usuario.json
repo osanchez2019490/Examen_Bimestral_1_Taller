@@ -1,27 +1,28 @@
 {
     "client": "Thunder Client",
     "collectionName": "Register-Usuario",
-    "dateExported": "2024-02-20T22:23:25.667Z",
+    "dateExported": "2024-03-05T19:51:56.350Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "7d5d2bd8-a4e2-4cd5-8892-a3e81cdeb0e0",
-            "colId": "164f3f75-6ae3-4b44-bf0c-a6385c4e0c6c",
+            "_id": "5092fca1-8d9b-4ef4-a918-5d9de54ec856",
+            "colId": "bfd20016-638d-4f48-b0a2-230cd9bdf338",
             "containerId": "",
             "name": "post_RegisterUsuario",
-            "url": "http://localhost:3000/api/usuarioRegister",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/usuarioRegister",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-20T20:02:18.146Z",
-            "modified": "2024-02-20T21:38:49.679Z",
+            "created": "2024-03-04T21:37:05.161Z",
+            "modified": "2024-03-05T19:49:51.388Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"username\": \"SIEMPRE\",\n  \"nombre\": \"Luis orlando carlos oscar\",\n  \"correo\": \"SIEMPRE@gmail.com\",\n  \"password\": \"123456\"\n\n}",
+                "raw": "{\n  \"username\": \"XDD\",\n  \"nombre\": \"Luis orlando carlos oscar\",\n  \"correo\": \"XDD@gmail.com\",\n  \"password\": \"123456\"\n\n}",
                 "form": []
             },
+            "reqType": "post",
             "tests": []
         }
     ]
