@@ -1,6 +1,6 @@
 import { response, request } from 'express';
 import Categoria from './categoria.js';
-
+import Productos from '../producto/producto.js';
 
 export const categoriaPost = async(req = request, res = response) => {
 
@@ -54,4 +54,30 @@ export const categoriaPut = async (req, res) =>{
         categoriaActualizada,
         categoriaAnterior
     })
+}
+
+export const categoriaDelete = async(req, res) => {
+    const { id } = req.params;
+
+    const categoriaEliminar = await Categoria.findById(id);
+
+    if(!categoriaEliminar) {
+        return res.status(400).json({
+            msg: 'La categoria no existe'
+        })
+    }
+
+    const categoriaPredeterminada = await Categoria.findOne({ categoria: 'Preterminada'});
+
+    await Productos.updateMany({ categoria: id,  categoria: categoriaPredeterminada._id});
+
+    categoriaEliminar.estado = false;
+    await categoriaEliminar.save();
+
+    res.status(200).json({ 
+        msg: 'Categoría desactivada y productos asociados transferidos exitosamente' ,
+        categoriaEliminar
+    });
+
+
 }
