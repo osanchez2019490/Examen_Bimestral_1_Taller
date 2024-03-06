@@ -1,5 +1,5 @@
 import { response, request } from "express";
-import Producto from './producto.controller.js';
+import Producto from './producto.js';
 import Categoria from "../categoria/categoria.js";
 
 
@@ -7,7 +7,7 @@ export const productoPost = async(req,res) => {
     const { nombre, descripcion, precio, stock, categoria} = req.body;
     const producto = new Producto ({nombre, descripcion, precio, stock, categoria});
 
-    const categoriaModelo = new Categoria.findOne({ categoria });
+    const categoriaModelo = await Categoria.findOne({ categoria: categoria });
 
     if(!categoriaModelo) {
         res.status(404).json({

@@ -2,8 +2,8 @@ import { Router } from "express";
 import { check } from "express-validator";
 import { validarJWT } from "../middlewares/validar.jwt.js";
 import { tieneRol } from "../middlewares/validar.rol.js";
-import { validarCampos } from "../middlewares/validar-campos";
-import { productoPost } from "./producto.controller";
+import { validarCampos } from "../middlewares/validar-campos.js";
+import { productoPost } from "./producto.controller.js";
 
 const router = Router();
 

@@ -22,10 +22,10 @@ const ProductoSchema = mongoose.Schema({
     },
 
     categoria:[{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Categoria'
     }],
-    
+
     estado: {
         type: Boolean,
         default: true
