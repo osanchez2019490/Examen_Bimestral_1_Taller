@@ -34,3 +34,27 @@ export const productoPost = async(req,res) => {
         producto
     })
 }
+
+export const productoGet = async(req, res) => {
+    const { limite, desde } = req.query;
+    
+    const query = { estado: true}
+
+    const [total, productos] = await Promise.all([
+        Producto.countDocuments(query),
+        Producto.find(query)
+            .skip(Number(desde))
+            .limit(Number(limite))
+            .populate({
+                path: 'categoria', 
+            })
+    ]);
+
+    console.log("Productos:", productos);
+
+
+    res.status(200).json({
+        total,
+        productos
+    })
+}
