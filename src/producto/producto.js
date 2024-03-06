@@ -21,6 +21,11 @@ const ProductoSchema = mongoose.Schema({
         required: [true, 'El producto necesita una cantidad que queda']
     },
 
+    categoria:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Categoria'
+    }],
+    
     estado: {
         type: Boolean,
         default: true
