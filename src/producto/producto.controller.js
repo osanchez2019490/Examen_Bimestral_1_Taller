@@ -36,21 +36,35 @@ export const productoPost = async(req,res) => {
 }
 
 export const productoGet = async(req, res) => {
-    const { limite, desde } = req.query;
+    const { limite, desde, agotado, masVendidos} = req.query;
     
     const query = { estado: true}
 
-    const [total, productos] = await Promise.all([
-        Producto.countDocuments(query),
-        Producto.find(query)
-            .skip(Number(desde))
-            .limit(Number(limite))
-            .populate({
-                path: 'categoria', 
-            })
-    ]);
+    if (agotado && agotado.toLowerCase() === 'true') {
+        query.stock = { $lte: 0 };
+    }
 
-    console.log("Productos:", productos);
+    let productos;
+
+    if (masVendidos && masVendidos.toLowerCase() === 'true') {
+        productos = await Producto.find(query)
+        .sort({ cantidadVendida: -1 })        
+        .skip(Number(desde))
+        .limit(Number(limite))
+        .populate({
+            path: 'categoria', 
+        });
+    } else {
+
+        productos = await Producto.find(query)
+        .skip(Number(desde))
+        .limit(Number(limite))
+        .populate({
+            path: 'categoria', 
+        });
+    }
+
+    const total = await Producto.countDocuments(query);
 
 
     res.status(200).json({

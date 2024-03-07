@@ -26,6 +26,11 @@ const ProductoSchema = mongoose.Schema({
         ref: 'Categoria'
     }],
 
+    cantidadVendida: {
+        type: String,
+        required: false
+    },
+
     estado: {
         type: Boolean,
         default: true
