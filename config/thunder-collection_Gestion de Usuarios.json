@@ -1,0 +1,180 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Gestion de Usuarios",
+    "dateExported": "2024-03-08T06:29:20.619Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "2bd990ab-56ac-41be-b06c-a8cb435a66d6",
+            "colId": "39977bb1-c323-4a7c-bcc5-3ad00e4fed0f",
+            "containerId": "",
+            "name": "post_Admin",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/gestionUsuario/admin",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-08T04:52:03.782Z",
+            "modified": "2024-03-08T04:54:26.471Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNjE4ODc0MzA1ZjhlYzhiOTdmMzkiLCJpYXQiOjE3MDk4NzA2MjIsImV4cCI6MTcwOTg3NzgyMn0.JwcnZWCGiZutoByzL4Ta9M-hjoMhUPQJjbT3yYXijnY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"Omar\",\n  \"nombre\": \"Omar\",\n  \"correo\": \"Omar@gmail.com\",\n  \"password\": \"123456\",\n  \"role\": \"ADMINISTRADOR_ROLE\"\n}",
+                "form": []
+            },
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "7db745d1-0d8e-4ed1-8017-38dca9105cd3",
+            "colId": "39977bb1-c323-4a7c-bcc5-3ad00e4fed0f",
+            "containerId": "",
+            "name": "post_Usuario",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/gestionUsuario/user",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-08T04:52:10.563Z",
+            "modified": "2024-03-08T04:55:55.144Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNjE4ODc0MzA1ZjhlYzhiOTdmMzkiLCJpYXQiOjE3MDk4NzA2MjIsImV4cCI6MTcwOTg3NzgyMn0.JwcnZWCGiZutoByzL4Ta9M-hjoMhUPQJjbT3yYXijnY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"Omar1\",\n  \"nombre\": \"Omar Primero XD\",\n  \"correo\": \"omarXaviDono@gmai.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "ab8d8e7f-e264-4b75-8dc3-3c3e198bcc09",
+            "colId": "39977bb1-c323-4a7c-bcc5-3ad00e4fed0f",
+            "containerId": "",
+            "name": "put_Usuario",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/gestionUsuario/user",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-08T05:12:03.821Z",
+            "modified": "2024-03-08T05:19:16.782Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNjE4ODc0MzA1ZjhlYzhiOTdmMzkiLCJpYXQiOjE3MDk4NzA2MjIsImV4cCI6MTcwOTg3NzgyMn0.JwcnZWCGiZutoByzL4Ta9M-hjoMhUPQJjbT3yYXijnY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"usernameBuscar\": \"Omar1\",\n  \"nombre\": \"Omar\",\n   \"correo\": \"XDLOL12@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "fe6e58e8-f62f-45ed-b434-f901d9912d5c",
+            "colId": "39977bb1-c323-4a7c-bcc5-3ad00e4fed0f",
+            "containerId": "",
+            "name": "put_Admin",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/gestionUsuario/admin",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-08T05:12:11.454Z",
+            "modified": "2024-03-08T05:20:54.028Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNjE4ODc0MzA1ZjhlYzhiOTdmMzkiLCJpYXQiOjE3MDk4NzA2MjIsImV4cCI6MTcwOTg3NzgyMn0.JwcnZWCGiZutoByzL4Ta9M-hjoMhUPQJjbT3yYXijnY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"usernameBuscar\": \"Omar\",\n  \"nombre\": \"EL YANO\",\n   \"correo\": \"YANO@gmail.com\",\n  \"password\": \"123456\",\n  \"role\": \"ADMINISTRADOR_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "29346ade-b546-4c7c-96e8-0894358994d6",
+            "colId": "39977bb1-c323-4a7c-bcc5-3ad00e4fed0f",
+            "containerId": "",
+            "name": "put_CambioDeRol",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/gestionUsuario/role",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-03-08T05:56:45.658Z",
+            "modified": "2024-03-08T05:57:52.769Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNjE4ODc0MzA1ZjhlYzhiOTdmMzkiLCJpYXQiOjE3MDk4NzA2MjIsImV4cCI6MTcwOTg3NzgyMn0.JwcnZWCGiZutoByzL4Ta9M-hjoMhUPQJjbT3yYXijnY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"buscarUsername\": \"Omar1\",\n  \"role\": \"ADMINISTRADOR_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c7bc3f91-76f0-4fa0-8b94-f7e78543e256",
+            "colId": "39977bb1-c323-4a7c-bcc5-3ad00e4fed0f",
+            "containerId": "",
+            "name": "delete_Usuario",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/gestionUsuario/user",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-03-08T06:18:16.372Z",
+            "modified": "2024-03-08T06:20:56.360Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhYThlNzNkODA1MTIwMGEyZTY4ZmMiLCJpYXQiOjE3MDk4Nzc1MDEsImV4cCI6MTcwOTg4NDcwMX0.M0pSChl5d_0AMQ5yxxHF9ulMHlizmGMJJPAKlzZgBJk"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"usernameBuscar\": \"XDD\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1ac4908c-6c0d-43e5-95f1-d7dcb76a9189",
+            "colId": "39977bb1-c323-4a7c-bcc5-3ad00e4fed0f",
+            "containerId": "",
+            "name": "delete_Admin",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/gestionUsuario/admin",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-03-08T06:18:45.387Z",
+            "modified": "2024-03-08T06:25:39.070Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhYThlNzNkODA1MTIwMGEyZTY4ZmMiLCJpYXQiOjE3MDk4Nzc1MDEsImV4cCI6MTcwOTg4NDcwMX0.M0pSChl5d_0AMQ5yxxHF9ulMHlizmGMJJPAKlzZgBJk"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"usernameBuscar\": \"LEO\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
