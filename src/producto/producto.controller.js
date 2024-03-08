@@ -35,7 +35,7 @@ export const productoPost = async(req,res) => {
     })
 }
 
-export const porductoPut = async(req, res) => {
+export const productoPut = async(req, res) => {
     const { id } = req.params;
     const { categoria, cantidadVendida, ...resto} = req.body;
 
@@ -63,6 +63,20 @@ export const porductoPut = async(req, res) => {
         producto: productoUpdate,
         productoAnterior
         
+    })
+}
+
+export const productoDelete = async(req, res ) => {
+    const { id } = req.params;
+    
+    const productoAnterior = await Producto.findById(id);
+
+    const productoUpdate = await Producto.findByIdAndUpdate(id, {estado: false}, {new: true});
+
+    res.status(200).json({
+        msg: "Producto eliminado",
+        producto: productoUpdate,
+        productoAnterior
     })
 }
 
