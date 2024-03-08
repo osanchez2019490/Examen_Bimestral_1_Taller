@@ -59,3 +59,27 @@ export const UsuarioAdminDelete = async(req, res) =>{
 
 
 }
+
+export const UsuarioPut = async(req, res) => {
+    const { _id, usernameBuscar ,password, estado,...resto } = req.body;
+    const token = req.header('x-token');
+
+    const decoded = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+    const usuarioId = decoded.uid;
+
+    const usuarioAnterior = await Usuario.findOne({username: usernameBuscar});
+
+    if(usuarioAnterior._id.toString() !== usuarioId){
+        return res.status(403).json({
+            msg: 'No tienes permiso para actualizar este perfil'
+        });
+    }
+
+    const usuarioUpdate = await Usuario.findByIdAndUpdate(usuarioAnterior._id, resto, {new: true});
+
+    res.status(200).json({
+        msg: "Perfil actualizado",
+        usuario: usuarioUpdate,
+        usuarioAnterior
+    })
+}

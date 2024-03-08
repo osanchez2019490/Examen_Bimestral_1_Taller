@@ -49,8 +49,14 @@ export const administradorPut = async(req, res) => {
 export const cambiarRole = async(req, res) => {
     const { buscarUsername , role} = req.body;
 
-    const usuario = await Usuario.findOne({username: buscarUsername});
-    const administrador = await Administrador.findOne({username: buscarUsername});
+    let usuario
+    let administrador
+
+    [usuario, administrador] = await Promise.all([
+        Usuario.findOne({ username: buscarUsername }),
+        Administrador.findOne({ username: buscarUsername })
+    ]);
+
 
     if(!usuario && !administrador){
          return res.status(400).json({
@@ -58,10 +64,10 @@ export const cambiarRole = async(req, res) => {
         })
     }
 
-    if(usuario.estado == false  && administrador.estado == false){
+    if (usuario && !usuario.estado || administrador && !administrador.estado) {
         return res.status(400).json({
-            msg: "El usaurio no existe en la base de datos"
-        })
+            msg: "El usuario no está habilitado"
+        });
     }
 
     const documento = role === 'ADMINISTRADOR_ROLE' ?
