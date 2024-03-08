@@ -16,8 +16,16 @@ const FacturaSchema = mongoose.Schema({
         required: [true, 'La factura necesita el total a pagar']
     },
 
+    producto: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Producto'
+    }],
+
     estado: {
         type: Boolean,
         default: true
     }
 })
+
+
+export default mongoose.model('Factura', FacturaSchema);
