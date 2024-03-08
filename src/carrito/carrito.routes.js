@@ -6,6 +6,7 @@ import { validarJWT } from "../middlewares/validar.jwt.js";
 import { tieneRol } from "../middlewares/validar.rol.js";
 import { agregarProductos, carritoPost } from "./carrito.controller.js";
 import { existeNombreDeCarrito } from "../helpers/db-validator.js";
+import { facturaPost } from "../factura/factura.controller.js";
 
 const router = Router();
 
@@ -33,6 +34,13 @@ router.post(
         validarCampos
     ],agregarProductos)
     
-
-
+router.post(
+    "/pagar",
+    [
+        validarJWT,
+        tieneRol("USUARIO_ROLE"),
+        check("nombreCarrito", "El nombre del carrito es necesaria").not().isEmpty(),
+        check("deseaPagar", "El nombre del carrito es necesaria").not().isEmpty(),
+        validarCampos
+    ], facturaPost)
 export default router;

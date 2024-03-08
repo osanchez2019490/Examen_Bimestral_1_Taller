@@ -5,6 +5,7 @@ import { response, request } from 'express';
 import jwt from "jsonwebtoken";
 
 
+
 export const carritoPost = async (req = request, res = response) => {
 
     const { estado, total, producto, totalProducto, ...resto } = req.body;
@@ -85,7 +86,7 @@ export const agregarProductos = async (req, res) => {
             msg: "No hay stock del producto"
         });
     }
-    
+
     carrito.producto.push(productoModel._id);
 
   

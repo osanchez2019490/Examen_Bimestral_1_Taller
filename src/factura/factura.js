@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const FacturaSchema = mongoose.Schema({
     cliente: [{
-        type: Schema.Type.ObjectID,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Usuario' 
     }],
 
