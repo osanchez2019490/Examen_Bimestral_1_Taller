@@ -4,10 +4,11 @@ import { check } from "express-validator";
 import { validarCampos } from '../middlewares/validar-campos.js';
 import { validarJWT } from "../middlewares/validar.jwt.js";
 import { tieneRol } from "../middlewares/validar.rol.js";
-import { existeEmeail, existeRole, existeUsername } from "../helpers/db-validator.js";
+import { existeEmeail} from "../helpers/db-validator.js";
 import { UsuarioDelete, UsuarioPut } from "./usuario.controller.js";
 import {  productoByCategoria, productoByNombre, productoGet } from "../producto/producto.controller.js";
 import {  categoriaUsuarioGet } from "../categoria/categoria.controller.js";
+import { historialGet } from "../historial/historial.controller.js";
 
 const router = Router();
 
@@ -61,4 +62,11 @@ router.get(
         validarCampos
     ], productoGet)
 
+router.get(
+    "/historial",
+    [
+        validarJWT,
+        tieneRol("USUARIO_ROLE"),
+         validarCampos
+    ], historialGet)
    export default router

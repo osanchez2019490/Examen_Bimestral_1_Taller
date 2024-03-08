@@ -47,12 +47,18 @@ export const carritoPost = async (req = request, res = response) => {
     await carrito.save();
 
     const carritoPopulado = await Carrito.findById(carrito._id)
-        .populate('cliente')
+        .populate({
+            path: 'cliente',
+            select: '-_id',
+            select: '-password'
+            })
         .populate({
             path: 'producto',
             select: '-cantidadVendida',
+            select: '-_id',
             populate: {
                 path: 'categoria',
+                select: '-_id',
             }
             });
 
@@ -108,12 +114,18 @@ export const agregarProductos = async (req, res) => {
     await carrito.save();
 
     const carritoPopulado = await Carrito.findById(carrito._id)
-        .populate('cliente')
+        .populate({
+            path: 'cliente',
+            select: '-_id',
+            select: '-password'
+            })
         .populate({
             path: 'producto',
             select: '-cantidadVendida',
+            select: '-_id',
             populate: {
                 path: 'categoria',
+                select: '-_id',
             }
             });
 

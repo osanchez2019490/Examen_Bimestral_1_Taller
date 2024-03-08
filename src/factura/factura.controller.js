@@ -3,7 +3,7 @@ import Factura  from "./factura.js";
 import Usuario from "../users/usuario.js";
 import { response, request } from 'express';
 import jwt from "jsonwebtoken";
-
+import Historial from "../historial/historial.js";
 
 export const facturaPost = async(req, res) => {
 
@@ -23,7 +23,7 @@ export const facturaPost = async(req, res) => {
         });
     }
 
-    if(deseaPagar == 'Si'){
+    if(deseaPagar == 'No'){
         res.status(400).json({ 
             msg: "Usted no desea pagar este carrito"
         });
@@ -48,15 +48,28 @@ export const facturaPost = async(req, res) => {
 
     const factura = new Factura(facturaData);
 
+    const historialData = {
+        factura: factura._id
+    }
+
+    const historial = new Historial(historialData)
+
+    await historial.save();
     await factura.save();
 
     const facturaPopulado = await Factura.findById(factura._id)
-        .populate('cliente')
+        .populate({
+            path: 'cliente',
+            select: '-_id',
+            select: '-password'
+            })
         .populate({
             path: 'producto',
             select: '-cantidadVendida',
+            select: '-_id',
             populate: {
                 path: 'categoria',
+                select: '-_id',
             }
             });
 
