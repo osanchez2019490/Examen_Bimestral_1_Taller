@@ -44,3 +44,18 @@ export const UsuarioAdminPut = async(req, res) => {
 
 }
 
+export const UsuarioAdminDelete = async(req, res) =>{
+    const { usernameBuscar } = req.body;
+
+    const usuarioAnterior = await Usuario.findOne( {username: usernameBuscar} );
+
+    const usuarioUpdate = await Usuario.findByIdAndUpdate(usuarioAnterior._id, {estado: true }, {new: true});
+
+    res.status(200).json({
+        msg: "Actualizacion existosa",
+        usuario: usuarioAnterior,
+        usuarioUpdate
+    })
+
+
+}

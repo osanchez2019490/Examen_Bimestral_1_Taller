@@ -5,8 +5,8 @@ import { validarCampos } from '../middlewares/validar-campos.js';
 import { validarJWT } from "../middlewares/validar.jwt.js";
 import { tieneRol } from "../middlewares/validar.rol.js";
 import { existeEmeail, existeRole, existeUsername } from "../helpers/db-validator.js";
-import { UsuarioAdminPut, usuarioPost } from "../users/usuario.controller.js";
-import { administradorPost, administradorPut } from "./administrador.controller.js";
+import { UsuarioAdminDelete, UsuarioAdminPut, usuarioPost } from "../users/usuario.controller.js";
+import { administradorDelete, administradorPost, administradorPut, cambiarRole } from "./administrador.controller.js";
 
 const router = Router();
 
@@ -49,8 +49,6 @@ const router = Router();
         tieneRol("ADMINISTRADOR_ROLE"),
         check("correo", "El correo no es un correo valido").isEmail(),
         check("correo").custom(existeEmeail),
-        check("role", "Se necestia un role").not().isEmpty(),
-        check("role").custom(existeRole),
         validarCampos
     ], administradorPut)
 
@@ -63,5 +61,29 @@ const router = Router();
         check("correo").custom(existeEmeail),
         validarCampos
     ], UsuarioAdminPut)
-    
+ router.put(
+    "/role",
+    [
+        validarJWT,
+        tieneRol("ADMINISTRADOR_ROLE"),
+        check("role", "Se necestia un role").not().isEmpty(),
+        check("role").custom(existeRole),
+        validarCampos
+    ], cambiarRole)
+
+ router.delete(
+    "/admin",
+    [
+        validarJWT,
+        tieneRol("ADMINISTRADOR_ROLE"),
+        validarCampos
+    ], administradorDelete)
+
+ router.delete(
+    "/user",
+    [
+        validarJWT,
+        tieneRol("ADMINISTRADOR_ROLE"),
+        validarCampos
+    ], UsuarioAdminDelete)
 export default router;
