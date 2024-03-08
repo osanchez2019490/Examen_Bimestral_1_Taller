@@ -5,7 +5,7 @@ import { validarCampos } from '../middlewares/validar-campos.js';
 import { validarJWT } from "../middlewares/validar.jwt.js";
 import { tieneRol } from "../middlewares/validar.rol.js";
 import { existeEmeail, existeRole, existeUsername } from "../helpers/db-validator.js";
-import { UsuarioPut } from "./usuario.controller.js";
+import { UsuarioDelete, UsuarioPut } from "./usuario.controller.js";
 
 const router = Router();
 
@@ -18,5 +18,13 @@ router.put(
        check("correo").custom(existeEmeail),
        validarCampos
    ], UsuarioPut)
+
+router.delete(
+    "/",
+    [
+        validarJWT,
+        tieneRol("USUARIO_ROLE"),
+        validarCampos
+    ], UsuarioDelete)
 
    export default router
