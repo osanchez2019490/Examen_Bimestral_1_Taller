@@ -72,3 +72,22 @@ export const productoGet = async(req, res) => {
         productos
     })
 }
+
+export const productoById = async (req, res) => {
+    const {id} = req.params;
+    const producto = await Producto.findOne({ _id: id});
+
+    res.status(200).json({
+        producto
+    })
+
+}
+
+export const productoByNombre = async(req, res) => {
+    const { nombre } = req.body;
+    const producto = await Producto.findOne({ nombre: nombre});
+
+    res.status(200).json({
+        producto
+    })
+}

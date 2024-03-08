@@ -3,7 +3,7 @@ import { check } from "express-validator";
 import { validarJWT } from "../middlewares/validar.jwt.js";
 import { tieneRol } from "../middlewares/validar.rol.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
-import { productoGet, productoPost } from "./producto.controller.js";
+import { productoById, productoGet, productoPost } from "./producto.controller.js";
 
 const router = Router();
 
@@ -22,7 +22,14 @@ router.post(
 
 router.get("/", [validarJWT, tieneRol("ADMINISTRADOR_ROLE")],productoGet )
 
-
+router.get(
+    "/:id",
+    [
+        validarJWT,
+        tieneRol("ADMINISTRADOR_ROLE"),
+        check("id", "No es una id valida").isMongoId(),
+    ], productoById
+)
 
 
 
