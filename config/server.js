@@ -11,7 +11,7 @@ import categoriaRoutes from '../src/categoria/categoria.routes.js';
 import productoRoutes from '../src/producto/producto.routes.js';
 import gestionUsuarioRoutes from '../src/admin/gestionUsuario.routes.js';
 import usuarioRoutes from '../src/users/usuario.routes.js';
-
+import carritoRoutes from '../src/carrito/carrito.routes.js';
 
 class Server {
     constructor(){
@@ -24,6 +24,7 @@ class Server {
         this.productoPath = '/MercadoEnLinea/v1/producto';
         this.gestionUsuarioPath = '/MercadoEnLinea/v1/gestionUsuario';
         this.usuarioPath = '/MercadoEnLinea/v1/usuario';
+        this.carritoPath = '/MercadoEnLinea/v1/carrito';
 
         this.conectarDB();
         this.middlware();
@@ -48,6 +49,7 @@ class Server {
         this.app.use(this.productoPath, productoRoutes);
         this.app.use(this.gestionUsuarioPath, gestionUsuarioRoutes);
         this.app.use(this.usuarioPath, usuarioRoutes);
+        this.app.use(this.carritoPath, carritoRoutes);
     }
 
     listen(){

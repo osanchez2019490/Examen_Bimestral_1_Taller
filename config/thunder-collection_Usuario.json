@@ -1,0 +1,151 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Usuario",
+    "dateExported": "2024-03-08T08:35:23.138Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4ab11b68-0cfd-4a82-9bbf-07491e67dacf",
+            "colId": "84dc9197-2e5c-464b-9c6a-e1b3db074fb5",
+            "containerId": "",
+            "name": "put_Usuario",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/usuario",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-03-08T07:05:14.394Z",
+            "modified": "2024-03-08T07:16:56.842Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhYmFiYmY3Y2JkZGJlNTUwZDhjOWQiLCJpYXQiOjE3MDk4ODIyMTAsImV4cCI6MTcwOTg4OTQxMH0.I87knJJuJd6d0Hl-orY4o8llN90F5mDqcGfMPp0KElM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"usernameBuscar\": \"Omar1\",\n  \"nombre\": \"Omar\",\n  \"correo\": \"Omar@kinal.edu.gt\",\n  \"password\": \"123456\",\n  \"direccion\": \"A\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fd8d5e30-9085-40ca-8808-2ffd59963fe6",
+            "colId": "84dc9197-2e5c-464b-9c6a-e1b3db074fb5",
+            "containerId": "",
+            "name": "delete_Usuario",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/usuario",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2024-03-08T07:21:42.605Z",
+            "modified": "2024-03-08T07:23:41.244Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhYmFiYmY3Y2JkZGJlNTUwZDhjOWQiLCJpYXQiOjE3MDk4ODI1NjQsImV4cCI6MTcwOTg4OTc2NH0.Pt16PI5-Gf9gkC9zROXoCjCVuX1E5PP3RDg1nQMfSCk"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"usernameBuscar\": \"Omar1\",\n    \"autorizacion\": \"Si\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "87a5757b-1151-4be0-a8cc-a7ba5516be78",
+            "colId": "84dc9197-2e5c-464b-9c6a-e1b3db074fb5",
+            "containerId": "",
+            "name": "get_ProductoByNombre",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/usuario/productos",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-08T07:31:02.974Z",
+            "modified": "2024-03-08T07:35:51.982Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhYWRlOTNkODA1MTIwMGEyZTY5MDUiLCJpYXQiOjE3MDk4ODMyNzYsImV4cCI6MTcwOTg5MDQ3Nn0.yfzqr-XeVo4RqSDfQonOyK3lCR92Yaz9O2Zp73Asz4o"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"producto\": \"Casco\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2c28d18a-fd80-4e3f-b3c8-1a5a4f3f6e31",
+            "colId": "84dc9197-2e5c-464b-9c6a-e1b3db074fb5",
+            "containerId": "",
+            "name": "get_categoria",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/usuario/categorias",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-08T07:39:34.657Z",
+            "modified": "2024-03-08T07:52:03.574Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNTMyMmRhYWIxMmJiOTRlNmQ3ODEiLCJpYXQiOjE3MDk4ODQxNTgsImV4cCI6MTcwOTg5MTM1OH0.-hizXxXVjE-A_0XP_1Ip_kXor1OUqu8IVoNT3bEUmCg"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "ff7e91af-155e-4986-b35e-e7c12b0343aa",
+            "colId": "84dc9197-2e5c-464b-9c6a-e1b3db074fb5",
+            "containerId": "",
+            "name": "get_ProductoByCategoria",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/usuario/categorias/productos",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-08T07:40:09.710Z",
+            "modified": "2024-03-08T07:49:28.056Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNTMyMmRhYWIxMmJiOTRlNmQ3ODEiLCJpYXQiOjE3MDk4ODQxNTgsImV4cCI6MTcwOTg5MTM1OH0.-hizXxXVjE-A_0XP_1Ip_kXor1OUqu8IVoNT3bEUmCg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"categoria\": \"Deporte\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8a51e9c6-5d80-46e6-b369-b04cacc266e0",
+            "colId": "84dc9197-2e5c-464b-9c6a-e1b3db074fb5",
+            "containerId": "",
+            "name": "get_ProductosMasVendidos",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/usuario/productos/masVendidos?masVendidos=true",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-08T07:57:04.995Z",
+            "modified": "2024-03-08T07:58:49.749Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNTMyMmRhYWIxMmJiOTRlNmQ3ODEiLCJpYXQiOjE3MDk4ODQxNTgsImV4cCI6MTcwOTg5MTM1OH0.-hizXxXVjE-A_0XP_1Ip_kXor1OUqu8IVoNT3bEUmCg"
+                }
+            ],
+            "params": [
+                {
+                    "name": "masVendidos",
+                    "value": "true",
+                    "isPath": false
+                }
+            ],
+            "reqType": "get",
+            "tests": []
+        }
+    ]
+}

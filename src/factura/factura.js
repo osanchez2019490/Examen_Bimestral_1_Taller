@@ -6,6 +6,11 @@ const FacturaSchema = mongoose.Schema({
         ref: 'Usuario' 
     }],
 
+    direccion: {
+        type:String,
+        required: [true, 'El carro necesita una direccion']
+    },
+    
     fecha: {
         type: String,
         required: [true, 'La factura necesita una fecha']

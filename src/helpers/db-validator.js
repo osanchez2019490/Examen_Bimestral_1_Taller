@@ -2,6 +2,7 @@ import Usuario from '../users/usuario.js';
 import Administrador from '../admin/administrador.js';
 import Role from '../roles/role.js';
 import Categoria from '../categoria/categoria.js';
+import Carrito from '../carrito/carrito.js';
 
 export const existeEmeail = async(correo= '') =>{
     const existeEmeail = await Usuario.findOne({correo});
@@ -60,3 +61,10 @@ export const existeCategoriaById = async (id = '') => {
 
 };
 
+
+export const existeNombreDeCarrito = async (nombreCarrito = '') =>{ 
+    const existeNombreDeCarrito = await Carrito.findOne({nombreCarrito});
+    if(existeNombreDeCarrito) {
+        throw new Error (`El nombre ${ nombreCarrito } para el carrito existe en la base de datos`);
+    };
+};
