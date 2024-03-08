@@ -15,7 +15,7 @@ export const productoPost = async(req,res) => {
         })
     }
 
-    if(categoriaModelo.estado = false){
+    if(categoriaModelo.estado == false){
         res.status(404).json({
             msg: "La categoria esta eliminada"
         })
@@ -129,10 +129,22 @@ export const productoById = async (req, res) => {
 }
 
 export const productoByNombre = async(req, res) => {
-    const { nombre } = req.body;
-    const producto = await Producto.findOne({ nombre: nombre});
+    const { producto } = req.body;
+    const productoModel = await Producto.findOne({ nombre: producto}).populate('categoria');
 
     res.status(200).json({
-        producto
+        productoModel
+    })
+}
+
+export const productoByCategoria = async(req, res) => {
+    const { categoria } = req.body;
+
+    const categoriaModel = await Categoria.findOne({ categoria: categoria})
+
+    const productoModel = await Producto.find( {categoria: categoriaModel._id} ).populate('categoria');
+
+    res.status(200).json({
+        productoModel
     })
 }

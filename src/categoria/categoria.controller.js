@@ -31,6 +31,24 @@ export const categoriaGet = async(req = request, res = response) => {
     })
 }
 
+export const categoriaUsuarioGet = async(req = request, res = response) => {
+    const { limite, desde} = req.query;
+    const query = { estado: true, categoria: {$ne: 'Preterminada'}};
+
+    const [ total, categorias ] = await Promise.all([
+        Categoria.countDocuments(query),
+        Categoria.find(query)
+        .skip(Number(desde))
+        .limit(Number(limite))
+    ]);
+
+    res.status(200).json({
+        total,
+        categorias
+    })
+}
+
+
 export const categoriaGetById = async(req, res) => {
     const { id } = req.params;
     const categoria = await Categoria.findOne({ _id: id});
