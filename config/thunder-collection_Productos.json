@@ -1,0 +1,129 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Productos",
+    "dateExported": "2024-03-08T04:50:38.334Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b623a82c-e271-4fd5-b506-a7aa9eb0dab3",
+            "colId": "9ff2545b-e671-4c25-9da4-99146109da1f",
+            "containerId": "",
+            "name": "get_Producto",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/producto",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-07T16:40:41.192Z",
+            "modified": "2024-03-08T04:03:59.238Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNjE4ODc0MzA1ZjhlYzhiOTdmMzkiLCJpYXQiOjE3MDk4NzA2MjIsImV4cCI6MTcwOTg3NzgyMn0.JwcnZWCGiZutoByzL4Ta9M-hjoMhUPQJjbT3yYXijnY"
+                }
+            ],
+            "params": [
+                {
+                    "name": "agotado",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "masVendidos",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "fc8868a2-f048-476d-b2f7-008a837f0d74",
+            "colId": "9ff2545b-e671-4c25-9da4-99146109da1f",
+            "containerId": "",
+            "name": "post_Producto",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/producto",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-07T16:42:06.542Z",
+            "modified": "2024-03-07T16:45:09.229Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNjE4ODc0MzA1ZjhlYzhiOTdmMzkiLCJpYXQiOjE3MDk4Mjk2MDQsImV4cCI6MTcwOTgzNjgwNH0.pIhJHM229fL37PWjy0gLCTt39GUWb0x3LtX3wY7ucFs"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Casco\",\n  \"descripcion\": \"Un casco\",\n  \"precio\": \"100.00Q\",\n  \"stock\": \"0\",\n  \"categoria\": \"Deporte\"\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "943a67b1-a375-4fd6-bba0-b1b875f513b4",
+            "colId": "9ff2545b-e671-4c25-9da4-99146109da1f",
+            "containerId": "",
+            "name": "getById_Producto",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/producto/65e9ef15572244cf191c8058",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-08T01:31:43.755Z",
+            "modified": "2024-03-08T01:32:42.317Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNjE4ODc0MzA1ZjhlYzhiOTdmMzkiLCJpYXQiOjE3MDk4NjE1MjIsImV4cCI6MTcwOTg2ODcyMn0.eRvUaMTVC0mossOBRpEpZHrSH0G0t7S6GuO9hRSIZhY"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "8cdfd1ad-6787-468d-8fb2-fc3b1654ce4a",
+            "colId": "9ff2545b-e671-4c25-9da4-99146109da1f",
+            "containerId": "",
+            "name": "put_Producto",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/producto/65e9eeae572244cf191c804e",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-08T04:02:08.834Z",
+            "modified": "2024-03-08T04:13:47.478Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNjE4ODc0MzA1ZjhlYzhiOTdmMzkiLCJpYXQiOjE3MDk4NzA2MjIsImV4cCI6MTcwOTg3NzgyMn0.JwcnZWCGiZutoByzL4Ta9M-hjoMhUPQJjbT3yYXijnY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"\",\n  \"descripcion\": \"\",\n  \"precio\": \"\",\n  \"stock\": \"1\",\n  \"categoria\": \"Nada\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f842052e-2708-4801-ab5b-12492252efcf",
+            "colId": "9ff2545b-e671-4c25-9da4-99146109da1f",
+            "containerId": "",
+            "name": "delete_Producto",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/producto/65e9eeae572244cf191c804e",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-03-08T04:17:00.858Z",
+            "modified": "2024-03-08T04:18:53.366Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNjE4ODc0MzA1ZjhlYzhiOTdmMzkiLCJpYXQiOjE3MDk4NzA2MjIsImV4cCI6MTcwOTg3NzgyMn0.JwcnZWCGiZutoByzL4Ta9M-hjoMhUPQJjbT3yYXijnY"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
