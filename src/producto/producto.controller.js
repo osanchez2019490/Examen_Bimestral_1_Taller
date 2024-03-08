@@ -35,6 +35,37 @@ export const productoPost = async(req,res) => {
     })
 }
 
+export const porductoPut = async(req, res) => {
+    const { id } = req.params;
+    const { categoria, cantidadVendida, ...resto} = req.body;
+
+
+    const productoAnterior = await Producto.findById(id).populate('categoria');
+    const categoriaModelo = await Categoria.findOne({ categoria: categoria });
+
+    if(!categoriaModelo) {
+        res.status(404).json({
+            msg: "NO existe en la base de datos"
+        })
+    }
+
+    if(categoriaModelo.estado = false){
+        res.status(404).json({
+            msg: "La categoria esta eliminada"
+        })
+    }
+
+    await Producto.findByIdAndUpdate(id, { categoria: categoriaModelo._id, resto });
+
+    const productoUpdate =  await Producto.findById(id).populate('categoria');
+    res.status(200).json({
+        msg: "Producto actualizado",
+        producto: productoUpdate,
+        productoAnterior
+        
+    })
+}
+
 export const productoGet = async(req, res) => {
     const { limite, desde, agotado, masVendidos} = req.query;
     
