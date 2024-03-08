@@ -19,3 +19,28 @@ export const usuarioPost = async (req, res) =>{
     });
 }
 
+export const UsuarioAdminPut = async(req, res) => {
+    const { _id, usernameBuscar ,password, estado,...resto } = req.body;
+
+    const usuarioAnterior = await Usuario.findOne({username: usernameBuscar});
+
+    if(!usuarioAnterior) {
+        res.status(400).json({ 
+            msg: "No se encontro el usuario"
+        });
+    }
+    if(password){
+        const salt = bcrypt.genSaltSync();
+        resto.password = bcrypt.hashSync(password, salt);
+    }
+
+    const usuarioUpdate = await Usuario.findByIdAndUpdate(usuarioAnterior._id, resto, {new: true});
+
+    res.status(200).json({
+        msg: "Actualizacions existosa",
+        usuario: usuarioUpdate ,
+        usuarioAnterior
+    })
+
+}
+

@@ -9,6 +9,7 @@ import authRoutes from '../src/auth/auth.routes.js';
 import adminRoutes from '../src/admin/administradorRegister.routes.js';
 import categoriaRoutes from '../src/categoria/categoria.routes.js';
 import productoRoutes from '../src/producto/producto.routes.js';
+import gestionUsuarioRoutes from '../src/admin/gestionUsuario.routes.js';
 
 
 class Server {
@@ -18,8 +19,9 @@ class Server {
         this.usuarioRegisterPath = '/MercadoEnLinea/v1/usuarioRegister';
         this.administradorRegisterPath = '/MercadoEnLinea/v1/administradorRegister';
         this.loginPath = '/MercadoEnLinea/v1/auth';
-        this.categoriaPath =  '/MercadoEnLinea/v1/categoria'
-        this.productoPath = '/MercadoEnLinea/v1/producto'
+        this.categoriaPath =  '/MercadoEnLinea/v1/categoria';
+        this.productoPath = '/MercadoEnLinea/v1/producto';
+        this.gestionUsuarioPath = '/MercadoEnLinea/v1/gestionUsuario';
 
         this.conectarDB();
         this.middlware();
@@ -42,6 +44,7 @@ class Server {
         this.app.use(this.loginPath, authRoutes);
         this.app.use(this.categoriaPath, categoriaRoutes);
         this.app.use(this.productoPath, productoRoutes);
+        this.app.use(this.gestionUsuarioPath, gestionUsuarioRoutes);
     }
 
     listen(){
