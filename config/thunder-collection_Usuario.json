@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Usuario",
-    "dateExported": "2024-03-08T08:35:23.138Z",
+    "dateExported": "2024-03-08T16:30:34.686Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -106,17 +106,17 @@
             "method": "GET",
             "sortNum": 50000,
             "created": "2024-03-08T07:40:09.710Z",
-            "modified": "2024-03-08T07:49:28.056Z",
+            "modified": "2024-03-08T09:53:55.194Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNTMyMmRhYWIxMmJiOTRlNmQ3ODEiLCJpYXQiOjE3MDk4ODQxNTgsImV4cCI6MTcwOTg5MTM1OH0.-hizXxXVjE-A_0XP_1Ip_kXor1OUqu8IVoNT3bEUmCg"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhYWRlOTNkODA1MTIwMGEyZTY5MDUiLCJpYXQiOjE3MDk4OTE1NTgsImV4cCI6MTcwOTg5ODc1OH0.n0oJ_xsvFEDBw-aKqpm_maCgfCqC2HQ_Ol5DTdg6cBU"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"categoria\": \"Deporte\"\n}",
+                "raw": "{\n  \"categoria\": \"Nada\"\n}",
                 "form": []
             },
             "tests": []
@@ -130,11 +130,11 @@
             "method": "GET",
             "sortNum": 60000,
             "created": "2024-03-08T07:57:04.995Z",
-            "modified": "2024-03-08T07:58:49.749Z",
+            "modified": "2024-03-08T09:54:17.185Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyNTMyMmRhYWIxMmJiOTRlNmQ3ODEiLCJpYXQiOjE3MDk4ODQxNTgsImV4cCI6MTcwOTg5MTM1OH0.-hizXxXVjE-A_0XP_1Ip_kXor1OUqu8IVoNT3bEUmCg"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhYWRlOTNkODA1MTIwMGEyZTY5MDUiLCJpYXQiOjE3MDk4OTE1NTgsImV4cCI6MTcwOTg5ODc1OH0.n0oJ_xsvFEDBw-aKqpm_maCgfCqC2HQ_Ol5DTdg6cBU"
                 }
             ],
             "params": [
@@ -145,6 +145,25 @@
                 }
             ],
             "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "d6c036fa-d4ef-4d14-85d7-3968b84ff70c",
+            "colId": "84dc9197-2e5c-464b-9c6a-e1b3db074fb5",
+            "containerId": "",
+            "name": "get_Historial",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/usuario/historial",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-03-08T16:03:03.045Z",
+            "modified": "2024-03-08T16:06:50.288Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhYWRlOTNkODA1MTIwMGEyZTY5MDUiLCJpYXQiOjE3MDk5MTQwMDUsImV4cCI6MTcwOTkyMTIwNX0.sY5tF7Qm2Xj6wb-LhcBdDyHDL_VY0c3R7Ltaha-fMOQ"
+                }
+            ],
+            "params": [],
             "tests": []
         }
     ]

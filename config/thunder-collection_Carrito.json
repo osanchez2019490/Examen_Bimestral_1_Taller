@@ -1,0 +1,83 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Carrito",
+    "dateExported": "2024-03-08T16:30:41.039Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "e111f158-cd41-4b99-aa65-5deb24364ca9",
+            "colId": "52f2e8e7-5ad3-4029-87e7-752688c73c48",
+            "containerId": "",
+            "name": "post_Carrito",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/carrito",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-08T08:35:31.339Z",
+            "modified": "2024-03-08T15:56:11.276Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhYWRlOTNkODA1MTIwMGEyZTY5MDUiLCJpYXQiOjE3MDk5MTIyNTIsImV4cCI6MTcwOTkxOTQ1Mn0.b-Nt3UPtaxA9aTnyS7a6pLKEZIXqdEB5pSurV8DkUEE"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombreCarrito\": \"WAZA12\",\n  \"direccion\": \"En mi casita \",\n  \"producto\": \"Jaja\",\n  \"totalProducto\": \"1\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "732e66cc-bf67-467e-833d-1402a4401b56",
+            "colId": "52f2e8e7-5ad3-4029-87e7-752688c73c48",
+            "containerId": "",
+            "name": "post_AgregarProducto",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/carrito/agregarProducto",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-08T09:22:13.092Z",
+            "modified": "2024-03-08T09:57:59.500Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhYWRlOTNkODA1MTIwMGEyZTY5MDUiLCJpYXQiOjE3MDk4OTE1NTgsImV4cCI6MTcwOTg5ODc1OH0.n0oJ_xsvFEDBw-aKqpm_maCgfCqC2HQ_Ol5DTdg6cBU"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombreCarrito\": \"YANO\",\n  \"producto\": \"Jaja\",\n  \"totalProducto\": \"1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "cd44bc0e-cfcc-4aac-bc79-d826ca8baf2a",
+            "colId": "52f2e8e7-5ad3-4029-87e7-752688c73c48",
+            "containerId": "",
+            "name": "post_Pagar",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/carrito/pagar",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-03-08T10:27:08.707Z",
+            "modified": "2024-03-08T15:46:16.700Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhYWRlOTNkODA1MTIwMGEyZTY5MDUiLCJpYXQiOjE3MDk5MTI3MzksImV4cCI6MTcwOTkxOTkzOX0.eL9NSMsKQvD5YBmthq6AxZJ3cbowjxTPiLI8FotKOtA"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombreCarrito\": \"YANO\",\n  \"deseaPagar\": \"No\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        }
+    ]
+}
