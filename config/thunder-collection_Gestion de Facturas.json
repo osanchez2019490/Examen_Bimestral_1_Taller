@@ -1,0 +1,33 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Gestion de Facturas",
+    "dateExported": "2024-03-09T03:33:55.591Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c6e2fdb9-7b73-45f3-9e60-a524a246bc69",
+            "colId": "49848713-1b71-40b5-9531-e477754d9fc1",
+            "containerId": "",
+            "name": "get_Facturas",
+            "url": "http://localhost:8080/MercadoEnLinea/v1/gestionFactura",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-09T03:31:36.197Z",
+            "modified": "2024-03-09T03:33:05.432Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhYmY2MWI3NjZjODY5MDM4YzI1Y2QiLCJpYXQiOjE3MDk5NTUxNTgsImV4cCI6MTcwOTk2MjM1OH0.XM5xTR-m9ftXPGAvtWJuHdJGard10NgjAOPmpqFm5Ws"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombreUsuario\": \"XDD\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

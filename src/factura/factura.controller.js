@@ -1,6 +1,7 @@
 import Carrito from "../carrito/carrito.js";
 import Factura  from "./factura.js";
 import Usuario from "../users/usuario.js";
+import Producto from "../producto/producto.js";
 import { response, request } from 'express';
 import jwt from "jsonwebtoken";
 import Historial from "../historial/historial.js";
@@ -76,5 +77,37 @@ export const facturaPost = async(req, res) => {
     res.status(200).json({
         factura: facturaPopulado
     })
+
+}
+
+export const obtenerFacturaUsuario = async(req, res) =>{
+    const { nombreUsuario } = req.body;
+
+    const usuario = await Usuario.findOne({ username: nombreUsuario });
+
+    if(!usuario){
+        return res.status(400).json({
+            msg: "Usuario no encontrado"
+        })
+    }
+
+    const facturas = await Factura.find({ cliente: usuario._id});
+
+    const facturasDetalladas = [];
+    for (const factura of facturas) {
+        const productos = await Producto.find({ _id: { $in: factura.producto } });
+        const facturaDetallada = {
+            cliente: nombreUsuario,
+            direccion: factura.direccion,
+            fecha: factura.fecha,
+            total: factura.total,
+            productos
+        };
+        facturasDetalladas.push(facturaDetallada);
+    }
+
+    res.status(200).json({
+        facturasDetalladas
+    });
 
 }
